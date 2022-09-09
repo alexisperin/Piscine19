@@ -12,22 +12,35 @@
 
 #include <unistd.h>
 
+void	write_comb(char *comb)
+{
+	char	comma[2];
+
+	comma[0] = ',';
+	comma[1] = ' ';
+	write (1, comb, 3);
+	if (comb[0] != '7')
+		write (1, comma, 2);
+}
+
 void	ft_print_comb(void)
 {
-	char	comb[5];
+	char	comb[3];
 
-	comb = {'0', '1', '2', ',', ' '};
-	for (comb[0] = '0'; comb[0] <= '7'; comb[0]++)
+	comb[0] = '0';
+	while (comb[0] <= '7')
 	{
-		for (comb[1] = comb[0] + 1; comb[1] <= '8'; comb[1]++)
+		comb[1] = comb[0] + 1;
+		while (comb[1] <= '8')
 		{
-			for (comb[2] = comb[1] + 1; comb[2] <= '9'; comb[2]++)
+			comb[2] = comb[1] + 1;
+			while (comb[2] <= '9')
 			{
-				if (comb[0] == '7')
-					write(1, comb, 3);
-				else
-					write(1, comb, 5);
+				write_comb (comb);
+				comb[2]++;
 			}
+			comb[1]++;
 		}
+		comb[0]++;
 	}
 }

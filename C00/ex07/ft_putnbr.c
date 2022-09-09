@@ -2,20 +2,21 @@
 
 void ft_putnbr(int nb)
 {
-	char minus = '-';
+	char	minus;
+	char	n;
 
-	if(nb < 0)
+	minus = '-';
+	if (nb < 0)
 	{
-		write(1, &minus, 1);
+		write (1, &minus, 1);
 		nb = -nb;
 	}
 
-	if(nb > 9)
+	if (nb > 9)
 	{
-		ft_putnbr(nb / 10);
+		ft_putnbr (nb / 10);
 		nb %= 10;
 	}
-
-	char n = '0' + nb;
-	write(1, &n, 1);
+	n  = '0' + nb;
+	write (1, &n, 1);
 }
