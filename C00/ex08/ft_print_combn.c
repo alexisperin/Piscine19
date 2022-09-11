@@ -5,63 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/08 12:53:21 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/08 12:54:49 by aperin           ###   ########.fr       */
+/*   Created: 2022/09/11 11:05:43 by aperin            #+#    #+#             */
+/*   Updated: 2022/09/11 11:07:49 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void write_comb(char *comb, int n)
+void	combn_recursive(int n, char *comb, int depth, int start)
 {
-	int end = 1;
-
-	if(comb[8] != '9')
-		end = 0;
-	else if(n == 1)
-		end = 1;
-	else
-		for(int i = 8; i > 9 - n; i--)
-			if(comb[i] != comb[i-1] + 1)
-				end = 0;
-	
-
-	char final_comb[9] = {'0', '0', '0', '0', '0', '0', '0', '0', '0'};
-	int start = 9 - n;
-	for(int i = 0; i < n; i++)
-		final_comb[i] = comb[start + i];
-
-	char comma[2] = {',', ' '};
-	write(1, final_comb, n);
-
-	if(end != 1)
-		write(1, comma, 2);
+	if (depth < n)
+	{
+		comb[depth] = start;
+		while (comb[depth] <= '9' - n + depth + 1)
+		{
+			combn_recursive(n, comb, depth + 1, comb[depth] + 1);
+			if (depth == n - 1)
+			{
+				if (comb[0] < '9' - n + 1)
+					write(1, comb, n + 2);
+				else
+					write(1, comb, n);
+			}
+			comb[depth]++;
+		}
+	}
 }
 
-void print_combn_recursive(int n, int index, char *comb, char min, char max)
+void	ft_print_combn(int n)
 {
-	if(index > 8)
-		return;
+	char	comb[11];
 
-	if(index == 8)
-		for(comb[index] = min; comb[index] <= max; comb[index]++)
-			write_comb(comb, n);
-	else
-		for(comb[index] = min; comb[index] <= max; comb[index]++)
-			print_combn_recursive(n, index + 1, comb, comb[index] + 1, max + 1);
-}
-
-void ft_print_combn(int n)
-{
-	char comb[9] = {'0', '0', '0', '0', '0', '0', '0', '0', '0'};
-	int index = 9 - n;
-	char max = '9' - n + 1;
-
-	if(n == 1)
-		for(comb[8] = '0'; comb[8] <= '9'; comb[8]++)
-			write_comb(comb, n);
-
-	else
-		for(comb[index] = '0'; comb[index] <= max; comb[index]++)
-			print_combn_recursive(n, index + 1, comb, comb[index] + 1, max + 1);
+	comb[n] = ',';
+	comb[n + 1] = ' ';
+	combn_recursive(n, comb, 0, '0');
 }

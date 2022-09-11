@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/09 09:29:17 by aperin            #+#    #+#             */
+/*   Updated: 2022/09/09 09:31:28 by aperin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
 	char	minus;
 	char	n;
@@ -11,12 +23,11 @@ void ft_putnbr(int nb)
 		write (1, &minus, 1);
 		nb = -nb;
 	}
-
 	if (nb > 9)
 	{
-		ft_putnbr (nb / 10);
+		ft_putnbr(nb / 10);
 		nb %= 10;
 	}
-	n  = '0' + nb;
-	write (1, &n, 1);
+	n = '0' + nb;
+	write(1, &n, 1);
 }
