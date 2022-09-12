@@ -6,11 +6,11 @@
 /*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 14:33:00 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/12 09:40:08 by aperin           ###   ########.fr       */
+/*   Updated: 2022/09/12 14:07:17 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <unistd.h>
+#include <unistd.h>
 
 void	ft_putstr(char *str)
 {
@@ -21,10 +21,3 @@ void	ft_putstr(char *str)
 		n++;
 	write(1, str, n);
 }
-/*
-int	main(void)
-{
-	ft_putstr("Hello how are you ?");
-	return (0);
-}
-*/

@@ -6,11 +6,9 @@
 /*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 13:22:23 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/12 09:08:23 by aperin           ###   ########.fr       */
+/*   Updated: 2022/09/12 10:43:40 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 void	ft_swap(int *a, int *b)
 {
@@ -19,16 +17,4 @@ void	ft_swap(int *a, int *b)
 	tmp = *a;
 	*a = *b;
 	*b = tmp;
-}
-
-int	main(void)
-{
-	int	a;
-	int	b;
-
-	a = 1;
-	b = 9;
-	printf("a = %d, b = %d\n", a, b);
-	ft_swap(&a, &b);
-	printf("a = %d, b = %d\n", a, b);
 }
