@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   main09.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
+/*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/11 09:29:17 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/12 12:23:12 by aperin           ###   ########.fr       */
+/*   Created: 2022/09/12 15:55:51 by aperin            #+#    #+#             */
+/*   Updated: 2022/09/12 16:16:59 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_lowercase(char *str)
-{
-	int	i;
+#include <stdio.h>
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			i++;
-		else
-			return (0);
-	}
-	return (1);
+char	*ft_strcapitalize(char *str);
+
+int	main(void)
+{
+	char	str[] = "hEllO, 4HoW+aRE-yOu ?";
+
+	printf("%s\n", str);
+	ft_strcapitalize(str);
+	printf("%s\n", str);
+	return (0);
 }

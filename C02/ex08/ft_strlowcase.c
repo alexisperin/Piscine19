@@ -6,15 +6,13 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 09:29:17 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/11 14:02:33 by aperin           ###   ########.fr       */
+/*   Updated: 2022/09/12 14:27:14 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-
 char	*ft_strlowcase(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -25,14 +23,3 @@ char	*ft_strlowcase(char *str)
 	}
 	return (str);
 }
-/*
-int main(void)
-{
-	char str1[] = "HELLO HOW ARE YOU ?";
-	char str2[] = "HElLO HoW ARE yOU ?";
-
-	
-	printf("HELLO HOW ARE YOU ?: %s\n", ft_strlowcase(str1));
-	printf("HElLO HoW ARE yOU ?: %s\n", ft_strlowcase(str2));
-}
-*/
