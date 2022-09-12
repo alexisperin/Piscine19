@@ -6,11 +6,27 @@
 /*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 12:04:26 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/09 12:32:53 by aperin           ###   ########.fr       */
+/*   Updated: 2022/09/12 09:00:42 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//#include <stdio.h>
 
 void	ft_ft(int *nbr)
 {
 	*nbr = 42;
 }
+/*
+int	main(void)
+{
+	int	val;
+	int	*ptr;
+
+	val = 0;
+	ptr = &val;
+	printf("%d\n", *ptr);
+	ft_ft(ptr);
+	printf("%d\n", *ptr);
+	return (0);
+}
+*/
