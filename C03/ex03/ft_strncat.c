@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main00.c                                           :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 11:06:20 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/13 11:06:34 by aperin           ###   ########.fr       */
+/*   Created: 2022/09/13 11:51:54 by aperin            #+#    #+#             */
+/*   Updated: 2022/09/13 11:57:56 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int ft_strcmp(char *s1, char *s2);
-
-int main(void)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	char s1[] = "Hello how 1re you ?";
-	char s2[] = "Hello how @re you ?";
+	unsigned int	i;
+	unsigned int	j;
 
-	printf("Expected: -15\n");
-	printf("Result: %d\n", ft_strcmp(s1, s2));
+	i = 0;
+	j = 0;
+	while (dest[i])
+		i++;
+	while (src[j] && j < nb)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
