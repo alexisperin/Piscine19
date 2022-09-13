@@ -6,7 +6,7 @@
 /*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 15:20:21 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/12 16:16:21 by aperin           ###   ########.fr       */
+/*   Updated: 2022/09/13 09:54:25 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,21 @@ int	is_lower(char c)
 		return (1);
 	return (0);
 }
+
 int	is_upper(char c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (1);
 	return (0);
 }
+
 int	is_digit(char c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
+
 char	*ft_strcapitalize(char *str)
 {
 	int	i;
@@ -45,9 +48,9 @@ char	*ft_strcapitalize(char *str)
 			str[i] += 32;
 		else if (is_digit(str[i - 1]) && is_upper(str[i]))
 			str[i] += 32;
-		else if (!is_lower(str[i - 1]) && !is_upper(str[i - 1]) && !is_digit(str[i - 1]))
-			if (is_lower(str[i]))
-				str[i]-= 32;
+		else if (!is_lower(str[i - 1]) && !is_upper(str[i - 1]))
+			if (!is_digit(str[i - 1]) && is_lower(str[i]))
+				str[i] -= 32;
 		i++;
 	}
 	return (str);
