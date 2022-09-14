@@ -1,4 +1,16 @@
-unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/14 11:14:20 by aperin            #+#    #+#             */
+/*   Updated: 2022/09/14 11:23:56 by aperin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	size_dest;
 	unsigned int	size_src;

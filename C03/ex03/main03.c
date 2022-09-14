@@ -6,7 +6,7 @@
 /*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 11:51:58 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/13 12:08:29 by aperin           ###   ########.fr       */
+/*   Updated: 2022/09/14 10:52:45 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int main(void)
 	char s1[] = "Hello";
 	char s2[] = " how are you ?";
 
-	printf("Source: %s\n", s1);
-	printf("Destination: %s\n", s2);
+	printf("Source: %s\n", s2);
+	printf("Destination: %s\n", s1);
     ft_strncat(s1, s2, 20);
 	printf("Result: %s\n", s1);
 }

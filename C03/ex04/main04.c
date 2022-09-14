@@ -4,7 +4,7 @@ char *ft_strstr(char *str, char *to_find);
 
 int main(void)
 {
-	char s1[] = "are";
+	char s1[] = "hi";
 	char s2[] = "Hello how are you ?";
 
 	printf("String: %s\n", s2);
