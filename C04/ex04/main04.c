@@ -10,7 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
+void ft_putnbr_base(int nbr, char *base);
+
 int	main(void)
 {
-	
+	ft_putnbr_base(42352, "0123456789");
+	write(1, "\n", 1);
+	ft_putnbr_base(-4234, "0123456789");
+	write(1, "\n", 1);
+	ft_putnbr_base(32, "01");
+	write(1, "\n", 1);
+	ft_putnbr_base(3635, "0123456789abcdef");
+	write(1, "\n", 1);
+	ft_putnbr_base(-3635, "0123456789abcdef");
 }
