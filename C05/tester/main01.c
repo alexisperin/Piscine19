@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   main01.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 11:06:05 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/15 11:06:13 by aperin           ###   ########.fr       */
+/*   Created: 2022/09/15 11:06:32 by aperin            #+#    #+#             */
+/*   Updated: 2022/09/15 11:06:33 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_recursive_factorial(int nb)
-{
-	int	factorial;
+#include <stdio.h>
 
-	factorial = nb;
-	if (nb < 0)
-		return (0);
-	if (nb == 0)
-		return (1);
-	if (nb > 1)
-		factorial *= ft_recursive_factorial(nb - 1);
-	return (factorial);
+int ft_recursive_factorial(int nb);
+
+int main(void)
+{
+	printf("%d\n", ft_recursive_factorial(-2));
+	printf("%d\n", ft_recursive_factorial(0));
+	printf("%d\n", ft_recursive_factorial(1));
+	printf("%d\n", ft_recursive_factorial(4));
+	return (0);
 }

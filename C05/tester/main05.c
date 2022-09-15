@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   main05.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 11:06:05 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/15 11:06:13 by aperin           ###   ########.fr       */
+/*   Created: 2022/09/15 12:36:39 by aperin            #+#    #+#             */
+/*   Updated: 2022/09/15 12:50:33 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_recursive_factorial(int nb)
-{
-	int	factorial;
+#include <stdio.h>
 
-	factorial = nb;
-	if (nb < 0)
-		return (0);
-	if (nb == 0)
-		return (1);
-	if (nb > 1)
-		factorial *= ft_recursive_factorial(nb - 1);
-	return (factorial);
+int	ft_sqrt(int nb);
+
+int	main(void)
+{
+	printf("sqrt -4: %d\n", ft_sqrt(-4));
+	printf("sqrt 0: %d\n", ft_sqrt(0));
+	printf("sqrt 1: %d\n", ft_sqrt(1));
+	printf("sqrt 2: %d\n", ft_sqrt(2));
+	printf("sqrt 9: %d\n", ft_sqrt(9));
+	printf("sqrt 12: %d\n", ft_sqrt(12));
+	printf("sqrt 100: %d\n", ft_sqrt(100));
 }
