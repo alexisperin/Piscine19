@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main00.c                                           :+:      :+:    :+:   */
+/*   main05.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/14 12:27:05 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/14 12:28:55 by aperin           ###   ########.fr       */
+/*   Created: 2022/09/09 14:38:53 by aperin            #+#    #+#             */
+/*   Updated: 2022/09/11 12:02:54 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+void	ft_putstr(char *str);
 
-int ft_strlen(char *str);
-
-int main(void)
+int		main()
 {
 	char str1[] = "Hello";
-	char str2[] = "Comment ca va ?";
+	ft_putstr(str1);
 
-	printf("Expected:\n");
-	printf("5, 15\n");
-	printf("Result:\n");
-	printf("%d, %d\n", ft_strlen(str1), ft_strlen(str2));
+	return 0;
 }
