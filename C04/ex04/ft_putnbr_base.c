@@ -6,35 +6,29 @@
 /*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 15:06:20 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/14 15:07:28 by aperin           ###   ########.fr       */
+/*   Updated: 2022/09/15 10:34:18 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int check_base_twice(char *base, int start)
-{
-	int i;
-
-	i = start + 1;
-	while (base[i])
-	{
-		if (base[start] == base[i])
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
 int	check_base(char *base)
 {
 	int	i;
+	int	j;
 
 	i = 0;
 	while (base[i])
 	{
-		if (base[i] == '+' || base[i] == '-' || check_base_twice(base, i))
+		if (base[i] == '+' || base[i] == '-')
 			return (0);
+		j = i + 1;
+		while (base[i] && base[j])
+		{
+			if (base[j] == base[i])
+				return (0);
+			j++;
+		}
 		i++;
 	}
 	return (i);
@@ -42,7 +36,7 @@ int	check_base(char *base)
 
 void	putnbr_base_recursive(int nbr, char *base, int base_size)
 {
-	char c;
+	char	c;
 
 	if (nbr < 0)
 	{
@@ -57,7 +51,7 @@ void	putnbr_base_recursive(int nbr, char *base, int base_size)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int base_size;
+	int	base_size;
 
 	base_size = check_base(base);
 	if (base_size <= 1)
