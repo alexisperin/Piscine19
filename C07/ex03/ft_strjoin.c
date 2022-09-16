@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/16 12:07:20 by aperin            #+#    #+#             */
+/*   Updated: 2022/09/16 12:07:56 by aperin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
-int get_size(char *str)
+int	get_size(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -10,10 +22,10 @@ int get_size(char *str)
 	return (i);
 }
 
-int get_full_size(int size, char **strs, char *sep)
+int	get_full_size(int size, char **strs, char *sep)
 {
-	int full_size;
-	int i;
+	int	full_size;
+	int	i;
 
 	full_size = (size - 1) * get_size(sep);
 	i = 0;
@@ -27,7 +39,7 @@ int get_full_size(int size, char **strs, char *sep)
 
 int	concatenate(char **new_str, char *str, int j)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -42,8 +54,8 @@ int	concatenate(char **new_str, char *str, int j)
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char	*new_str;
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;

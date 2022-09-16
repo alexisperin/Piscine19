@@ -18,4 +18,6 @@ void print_tab(int *tab, int size)
 int main(void)
 {
 	print_tab(ft_range(-5, 5), 10);
+	print_tab(ft_range(5, 5), 0);
+	print_tab(ft_range(5, -5), 0);
 }
