@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_params.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/16 11:22:25 by aperin            #+#    #+#             */
+/*   Updated: 2022/09/16 11:22:55 by aperin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 void	ft_putstr(char *str)
@@ -11,9 +23,9 @@ void	ft_putstr(char *str)
 	write(1, "\n", 1);
 }
 
-int compare(char *str1, char *str2)
+int	compare(char *str1, char *str2)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str1[i] && str2[i] && str1[i] == str2[i])
