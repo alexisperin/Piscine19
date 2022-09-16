@@ -1,44 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   main06.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 14:32:52 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/16 14:29:02 by aperin           ###   ########.fr       */
+/*   Created: 2022/09/15 12:51:48 by aperin            #+#    #+#             */
+/*   Updated: 2022/09/16 13:35:38 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_prime(int nb)
-{
-	int	i;
+#include <stdio.h>
 
-	if (nb < 2)
-		return (0);
-	if (nb == 2)
-		return (1);
-	if (nb == 2147483647)
-		return (1);
-	if (nb % 2 == 0)
-		return (0);
-	i = 3;
-	while (i * i <= nb)
-	{
-		if (nb % i == 0)
-			return (0);
-		i += 2;
-	}
-	return (1);
-}
+int	ft_is_prime(int nb);
 
-int	ft_find_next_prime(int nb)
+int	main(void)
 {
-	if (nb <= 2)
-		return (2);
-	if (nb % 2 == 0)
-		nb++;
-	while (!ft_is_prime(nb))
-		nb += 2;
-	return (nb);
+	printf("0: %d\n", ft_is_prime(0));
+	printf("1: %d\n", ft_is_prime(1));
+	printf("2: %d\n", ft_is_prime(2));
+	printf("3: %d\n", ft_is_prime(3));
+	printf("4: %d\n", ft_is_prime(4));
+	printf("13: %d\n", ft_is_prime(13));
+	printf("-1: %d\n", ft_is_prime(-1));
+	printf("43: %d\n", ft_is_prime(43));
+	printf("2147483647: %d\n", ft_is_prime(2147483647));
 }

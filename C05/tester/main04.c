@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   main04.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 12:36:33 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/16 14:26:30 by aperin           ###   ########.fr       */
+/*   Created: 2022/09/15 11:36:55 by aperin            #+#    #+#             */
+/*   Updated: 2022/09/15 12:34:13 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
-{
-	int	sqrt;
+#include <stdio.h>
 
-	if (nb <= 0)
-		return (0);
-	sqrt = 1;
-	while (sqrt * sqrt < nb && sqrt < 46341)
-		sqrt++;
-	if (sqrt * sqrt == nb)
-		return (sqrt);
-	return (0);
+int ft_fibonacci(int index);
+
+int	main(void)
+{
+	printf("fib -4: %d\n", ft_fibonacci(-4));
+	printf("fib 0: %d\n", ft_fibonacci(0));
+	printf("fib 1: %d\n", ft_fibonacci(1));
+	printf("fib 2: %d\n", ft_fibonacci(2));
+	printf("fib 3: %d\n", ft_fibonacci(3));
+	printf("fib 10: %d\n", ft_fibonacci(10));
 }

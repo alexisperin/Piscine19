@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   main05.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 12:36:33 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/16 14:26:30 by aperin           ###   ########.fr       */
+/*   Created: 2022/09/15 12:36:39 by aperin            #+#    #+#             */
+/*   Updated: 2022/09/16 14:27:09 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
-{
-	int	sqrt;
+#include <stdio.h>
 
-	if (nb <= 0)
-		return (0);
-	sqrt = 1;
-	while (sqrt * sqrt < nb && sqrt < 46341)
-		sqrt++;
-	if (sqrt * sqrt == nb)
-		return (sqrt);
-	return (0);
+int	ft_sqrt(int nb);
+
+int	main(void)
+{
+	printf("sqrt -4: %d\n", ft_sqrt(-4));
+	printf("sqrt 0: %d\n", ft_sqrt(0));
+	printf("sqrt 1: %d\n", ft_sqrt(1));
+	printf("sqrt 2: %d\n", ft_sqrt(2));
+	printf("sqrt 9: %d\n", ft_sqrt(9));
+	printf("sqrt 12: %d\n", ft_sqrt(12));
+	printf("sqrt 100: %d\n", ft_sqrt(100));
+	printf("sqrt 2147483647: %d\n", ft_sqrt(2147483647));
 }

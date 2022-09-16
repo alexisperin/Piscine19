@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   main07.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 12:36:33 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/16 14:26:30 by aperin           ###   ########.fr       */
+/*   Created: 2022/09/15 14:32:59 by aperin            #+#    #+#             */
+/*   Updated: 2022/09/16 14:35:46 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
-{
-	int	sqrt;
+#include <stdio.h>
 
-	if (nb <= 0)
-		return (0);
-	sqrt = 1;
-	while (sqrt * sqrt < nb && sqrt < 46341)
-		sqrt++;
-	if (sqrt * sqrt == nb)
-		return (sqrt);
-	return (0);
+int	ft_find_next_prime(int nb);
+
+int	main(void)
+{
+	printf("0: %d\n", ft_find_next_prime(0));
+	printf("4: %d\n", ft_find_next_prime(4));
+	printf("7: %d\n", ft_find_next_prime(7));
+	printf("40: %d\n", ft_find_next_prime(40));
+	printf("-5: %d\n", ft_find_next_prime(-5));
+	printf("2147483647: %d\n", ft_find_next_prime(2147483647));
 }
