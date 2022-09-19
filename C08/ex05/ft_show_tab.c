@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_show_tab.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/19 09:49:31 by aperin            #+#    #+#             */
+/*   Updated: 2022/09/19 09:49:51 by aperin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 void	ft_putnbr(int nb)
@@ -37,9 +49,9 @@ void	ft_putstr(char *str)
 	write(1, "\n", 1);
 }
 
-void ft_show_tab(struct s_stock_str *par)
+void	ft_show_tab(struct s_stock_str *par)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (par[i].str != 0)
