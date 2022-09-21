@@ -18,7 +18,7 @@ INC		= inlcudes
 RM		= rm -f
 
 .c.o:
-	gcc -Wall -Wextra -Werror -c -I INC $< -o $(<:.c=.o)
+	gcc -Wall -Wextra -Werror -c -I $(INC) $< -o $(<:.c=.o)
 
 $(NAME):
 	$(OBJ)
