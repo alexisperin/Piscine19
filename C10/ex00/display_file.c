@@ -23,4 +23,5 @@ void	display_file(char *file_name)
 			ft_putstr(buf, 1, size);
 		}
 	}
+	close(file);
 }
