@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		ft_cat(argv[i]);
+		ft_cat(argv[0], argv[i]);
 		i++;
 	}
 }

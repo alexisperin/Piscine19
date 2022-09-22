@@ -31,3 +31,10 @@ void	ft_putstr(char *str, int output, int len)
 		len = ft_strlen(str);
 	write(output, str, len);
 }
+
+int	is_single_dash(char *str)
+{
+	if (str[0] == '-' && str[1] == '\0')
+		return (1);
+	return (0);
+}

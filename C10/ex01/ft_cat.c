@@ -12,58 +12,64 @@
 
 #include <fcntl.h>
 #include <unistd.h>
+#include <libgen.h>
+#include <string.h>
+#include <errno.h>
 #include "ft_cat.h"
 
-int	is_single_dash(char *str)
+void	display_error(char *prog_name, char *filename)
 {
-	if (str[0] == '-' && str[1] == '\0')
-		return (1);
-	return (0);
+	ft_putstr(basename(prog_name), STDERR, 0);
+	ft_putstr(": ", STDERR, 2);
+	ft_putstr(filename, STDERR, 0);
+	ft_putstr(": ", STDERR, 2);
+	ft_putstr(strerror(errno), STDERR, 0);
+	ft_putstr("\n", STDERR, 1);
 }
 
 void	ft_stdin(void)
 {
-	char	buf[1000];
+	char	buf[BUF_SIZE];
 	int		size;
 
-	size = read(0, buf, 1000);
+	size = read(0, buf, BUF_SIZE);
 	while (size != 0)
 	{
-		ft_putstr(buf, 1, size);
-		size = read(0, buf, 1000);
+		ft_putstr(buf, STDOUT, size);
+		size = read(0, buf, BUF_SIZE);
 	}
 }
 
-void	display_file(char *filename)
+void	display_file(char *prog_name, char *filename)
 {
 	int		file;
 	int		size;
-	char	buf[1000];
+	char	buf[BUF_SIZE];
 
 	file = open(filename, O_RDONLY);
 	if (file == -1)
-		ft_putstr("Cannot read file.\n", 2, 0);
+		display_error(prog_name, filename);
 	else
 	{
-		size = read(file, buf, 1000);
+		size = read(file, buf, BUF_SIZE);
 		while (size != 0)
 		{
 			if (size == -1)
 			{
-				ft_putstr("Cannot read file.\n", 2, 0);
+				display_error(prog_name, filename);
 				break ;
 			}
-			ft_putstr(buf, 1, size);
-			size = read(file, buf, 1000);
+			ft_putstr(buf, STDOUT, size);
+			size = read(file, buf, BUF_SIZE);
 		}
 	}
 	close(file);
 }
 
-void	ft_cat(char *filename)
+void	ft_cat(char *prog_name, char *filename)
 {
 	if (is_single_dash(filename))
 		ft_stdin();
 	else
-		display_file(filename);
+		display_file(prog_name, filename);
 }
