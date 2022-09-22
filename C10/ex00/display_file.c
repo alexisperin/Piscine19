@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   display_file.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/22 15:05:33 by aperin            #+#    #+#             */
+/*   Updated: 2022/09/22 15:08:31 by aperin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <fcntl.h>
 #include <unistd.h>
 #include "display_file.h"
@@ -13,7 +25,8 @@ void	display_file(char *file_name)
 		ft_putstr("Cannot read file.\n", 2, 0);
 	else
 	{
-		while ((size = read(file, buf, 1000)) != 0)
+		size = read(file, buf, 1000);
+		while (size != 0)
 		{
 			if (size == -1)
 			{
@@ -21,6 +34,7 @@ void	display_file(char *file_name)
 				break ;
 			}
 			ft_putstr(buf, 1, size);
+			size = read(file, buf, 1000);
 		}
 	}
 	close(file);
