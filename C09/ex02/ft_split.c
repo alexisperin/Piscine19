@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/22 11:57:40 by aperin            #+#    #+#             */
+/*   Updated: 2022/09/22 11:58:34 by aperin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 int	is_seperator(char c, char *charset)
@@ -13,7 +25,6 @@ int	is_seperator(char c, char *charset)
 	}
 	return (0);
 }
-
 
 int	size_split(char *str, char *charset)
 {

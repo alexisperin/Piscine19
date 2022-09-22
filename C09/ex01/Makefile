@@ -6,34 +6,29 @@
 #    By: aperin <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/20 10:52:43 by aperin            #+#    #+#              #
-#    Updated: 2022/09/20 15:07:42 by aperin           ###   ########.fr        #
+#    Updated: 2022/09/22 11:56:13 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= libft.a
-SRC		= srcs/ft_putchar.c srcs/ft_swap.c srcs/ft_putstr.c \
+SRCS	= srcs/ft_putchar.c srcs/ft_swap.c srcs/ft_putstr.c \
 			srcs/ft_strlen.c srcs/ft_strcmp.c
-OBJ		= $(SRC:.c=.o)
-INC		= inlcudes
-RM		= rm -f
+OBJS	= $(SRCS:.c=.o)
+NAME	= libft.a
 
-.c.o:
-	gcc -Wall -Wextra -Werror -c -I $(INC) $< -o $(<:.c=.o)
+%.o : %.c
+	gcc -Wall -Wextra -Werror -c -I./includes $< -o ${<:.c=.o}
 
-$(NAME):
-	$(OBJ)
-	ar -rc $(NAME) $(OBJ)
+${NAME}:	${OBJS}
+			ar -rc $@ $^
 
-all:
-	$(NAME)
+all:	${NAME}
 
 clean:
-	$(RM) $(OBJ)
+	rm -f ${OBJS}
 
-fclean:
-	clean
-	$(RM) $(NAME)
+fclean:		clean
+			rm -f ${NAME}
 
-re:
-	fclean
-	all
+re:		fclean all
+
+.PHONY:		all clean fclean re
