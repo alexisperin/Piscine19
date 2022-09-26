@@ -14,7 +14,13 @@ void	ft_putstr_non_printable(char *str);
 
 int	main(void)
 {
-	char str[] = "Coucou\ntu vas bien ?";
+	char str[126];
+	int i = 0;
 
+	while (i < 127)
+	{
+		str[i] = i + 1;
+		i++;
+	}
 	ft_putstr_non_printable(str);
 }

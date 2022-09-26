@@ -18,8 +18,13 @@ int	main(void)
 {
 	char src[] = "Hello, how are you ?";
 	char dest[40];
+	char dest2[1];
 
 	unsigned int len = ft_strlcpy(dest, src, 40);
 	printf("Source:\n    %s\n", src);
 	printf("Destination:\n    %d, %s\n", len, dest);
+
+	len = ft_strlcpy(dest2, src, 0);
+	printf("Source:\n    %s\n", src);
+	printf("Destination:\n    %d, %s\n", len, dest2);
 }
