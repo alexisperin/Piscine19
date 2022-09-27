@@ -1,31 +1,13 @@
-#include <unistd.h>
+#include <stdio.h>
 #include <limits.h>
 
-void ft_convert_base(char *nbr, char *base_from, char *base_to);
+char	*ft_convert_base(char *nbr, char *base_from, char *base_to);
 
 int	main(void)
 {
-	ft_convert_base("  +10", "0123456789", "01");
-	write(1, "\n", 1);
-	ft_convert_base("  +--+-+-+-4", "0123456789", "01");
-	write(1, "\n", 1);
-    /*
-	ft_convert_base(INT_MAX, "0123456789");
-	write(1, "\n", 1);
-	ft_convert_base(INT_MIN, "0123456789");
-	write(1, "\n", 1);
-	ft_convert_base(0, "0123456789");
-	write(1, "\n", 1);
-	ft_convert_base(32, "01");
-	write(1, "\n", 1);
-	ft_convert_base(INT_MAX, "01");
-	write(1, "\n", 1);
-	ft_convert_base(3635, "0123456789abcdef");
-	write(1, "\n", 1);
-	ft_convert_base(-3635, "0123456789abcdef");
-	write(1, "\n", 1);
-	ft_convert_base(INT_MAX, "0123456789abcdef");
-	write(1, "\n", 1);
-	ft_convert_base(INT_MIN, "0123456789abcdef");
-    */
+	printf("%s\n", ft_convert_base("10", "0123456789", "01"));
+	printf("%s\n", ft_convert_base("  +--+-+-+-4", "0123456789", "01"));
+	printf("%s\n", ft_convert_base("10101101", "01", "0123456789"));
+	printf("%s\n", ft_convert_base("2147483647", "0123456789", "0123456789abcdef"));
+	printf("%s\n", ft_convert_base("-2147483648", "0123456789", "0123456789abcdef"));
 }

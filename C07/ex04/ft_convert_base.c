@@ -11,9 +11,8 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
-void	ft_putnbr_base(int nbr, char *base, int base_size);
+char	*ft_putnbr_base(int nbr, char *base, int base_size);
 
 int	check_base(char *base)
 {
@@ -87,7 +86,7 @@ int	ft_atoi_base(char *str, char *base, int base_size)
 	return (sign * nbr);
 }
 
-void ft_convert_base(char *nbr, char *base_from, char *base_to)
+char *ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
     int base_from_size;
     int base_to_size;
@@ -96,8 +95,7 @@ void ft_convert_base(char *nbr, char *base_from, char *base_to)
 	base_from_size = check_base(base_from);
     base_to_size = check_base(base_to);
 	if (base_from_size <= 1 || base_to_size <= 1)
-		return ;//(NULL);
+		return (NULL);
     nb = ft_atoi_base(nbr, base_from, base_from_size);
-    printf("int val: %d\n", nb);
-    ft_putnbr_base(nb, base_to, base_to_size);
+    return (ft_putnbr_base(nb, base_to, base_to_size));
 }
