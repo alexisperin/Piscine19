@@ -12,16 +12,21 @@
 
 NAME	= do-op
 SRCS	= ft_atoi.c ft_putnbr.c ft_str.c main.c operations.c
+OBJS	= $(SRCS:.c=.o)
 
-$(NAME):
-	gcc -Wall -Wextra -Werror $(SRCS) -o $(NAME)
+%.o : %.c
+	gcc -Wall -Wextra -Werror -c -I./includes $< -o ${<:.c=.o}
+
+$(NAME):	$(OBJS)
+	gcc -Wall -Wextra -Werror $(OBJS) -o $(NAME)
 
 all:	$(NAME)
 
 clean:	
-	rm -f do-op
+	rm -f $(OBJS)
 
 fclean:	clean
+	rm -f $(NAME)
 
 re:	fclean all
 

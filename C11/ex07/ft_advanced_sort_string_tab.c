@@ -31,9 +31,7 @@ void	ft_advanced_sort_string_tab(char **tab, int (*cmp)(char *, char *))
 		while (tab[i2])
 		{
 			if (cmp(tab[i1], tab[i2]) > 0)
-			{
 				swap_str(&tab[i1], &tab[i2]);
-			}
 			i2++;
 		}
 		i1++;
