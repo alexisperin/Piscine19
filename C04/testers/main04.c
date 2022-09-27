@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main04.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 15:06:24 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/14 15:07:48 by aperin           ###   ########.fr       */
+/*   Updated: 2022/09/27 11:45:52 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ int	main(void)
 	write(1, "\n", 1);
 	ft_putnbr_base(INT_MIN, "0123456789");
 	write(1, "\n", 1);
+	ft_putnbr_base(0, "0123456789");
+	write(1, "\n", 1);
 	ft_putnbr_base(32, "01");
+	write(1, "\n", 1);
+	ft_putnbr_base(INT_MAX, "01");
 	write(1, "\n", 1);
 	ft_putnbr_base(3635, "0123456789abcdef");
 	write(1, "\n", 1);

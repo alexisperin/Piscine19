@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 10:11:53 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/15 10:28:54 by aperin           ###   ########.fr       */
+/*   Updated: 2022/09/27 11:51:03 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	check_base(char *base)
 	i = 0;
 	while (base[i])
 	{
-		if (base[i] == '+' || base[i] == '-')
+		if (base[i] == '+' || base[i] == '-' || base[i] < 33 || base[i] == 127)
 			return (0);
 		j = i + 1;
 		while (base[i] && base[j])
@@ -89,7 +89,7 @@ int	ft_atoi_base(char *str, char *base)
 	if (base_size <= 1)
 		return (0);
 	i = skip_prefix(str, &sign);
-	while (in_base(str[i], base))
+	while (str[i] && in_base(str[i], base))
 	{
 		nbr = (nbr * base_size) + convert(str[i], base);
 		i++;
