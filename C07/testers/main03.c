@@ -4,7 +4,7 @@ char	*ft_strjoin(int size, char **strs, char *sep);
 
 int	main(void)
 {
-	char *strs[10];
+	char *strs[9];
 
 	strs[0] = "Just";
 	strs[1] = "a";
@@ -14,8 +14,7 @@ int	main(void)
 	strs[5] = "i'm";
 	strs[6] = "stupid";
 	strs[7] = "or";
-	strs[8] = "not.";
-	strs[9] = "\n";
+	strs[8] = "not";
 
-	printf("%s", ft_strjoin(10, strs, " | "));
+	printf("%s", ft_strjoin(9, strs, " "));
 }

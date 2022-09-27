@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 12:07:20 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/16 12:07:56 by aperin           ###   ########.fr       */
+/*   Updated: 2022/09/27 15:27:52 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	get_size(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
+	if (!str)
+		return (0);
 	i = 0;
 	while (str[i])
 		i++;
@@ -27,11 +29,11 @@ int	get_full_size(int size, char **strs, char *sep)
 	int	full_size;
 	int	i;
 
-	full_size = (size - 1) * get_size(sep);
+	full_size = (size - 1) * ft_strlen(sep);
 	i = 0;
 	while (i < size)
 	{
-		full_size += get_size(strs[i]);
+		full_size += ft_strlen(strs[i]);
 		i++;
 	}
 	return (full_size + 1);
@@ -41,6 +43,8 @@ int	concatenate(char **new_str, char *str, int j)
 {
 	int	i;
 
+	if (!str)
+		return (j);
 	i = 0;
 	while (str[i])
 	{
@@ -48,6 +52,7 @@ int	concatenate(char **new_str, char *str, int j)
 		i++;
 		j++;
 	}
+	(*new_str)[j] = '\0';
 	return (j);
 }
 
@@ -60,10 +65,15 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	i = 0;
 	j = 0;
 	if (size <= 0)
-		return ("");
+	{
+		new_str = malloc(sizeof(char));
+		if (!new_str)
+			return (0);
+		return (new_str);
+	}
 	new_str = malloc(get_full_size(size, strs, sep) * sizeof(char));
-	if (new_str == NULL)
-		return (NULL);
+	if (!new_str)
+		return (0);
 	while (i < size)
 	{
 		j = concatenate(&new_str, strs[i], j);
@@ -72,6 +82,5 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		j = concatenate(&new_str, sep, j);
 		i++;
 	}
-	new_str[j] = '\0';
 	return (new_str);
 }
