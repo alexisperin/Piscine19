@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 13:22:54 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/27 17:15:12 by aperin           ###   ########.fr       */
+/*   Updated: 2022/09/28 10:02:25 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,31 +71,31 @@ int	ft_atoi_base(char *str, char *base, int base_size)
 	int	i;
 	int	sign;
 	int	nbr;
-    int curr;
+	int	curr;
 
 	sign = 1;
 	nbr = 0;
 	i = skip_prefix(str, &sign);
-    curr = convert(str[i], base);
+	curr = convert(str[i], base);
 	while (str[i] && curr >= 0)
 	{
 		nbr = (nbr * base_size) + curr;
-        curr = convert(str[i + 1], base);
+		curr = convert(str[i + 1], base);
 		i++;
 	}
 	return (sign * nbr);
 }
 
-char *ft_convert_base(char *nbr, char *base_from, char *base_to)
+char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-    int base_from_size;
-    int base_to_size;
-    int nb;
-    
+	int	base_from_size;
+	int	base_to_size;
+	int	nb;
+
 	base_from_size = check_base(base_from);
-    base_to_size = check_base(base_to);
+	base_to_size = check_base(base_to);
 	if (base_from_size <= 1 || base_to_size <= 1)
 		return (NULL);
-    nb = ft_atoi_base(nbr, base_from, base_from_size);
-    return (ft_putnbr_base(nb, base_to, base_to_size));
+	nb = ft_atoi_base(nbr, base_from, base_from_size);
+	return (ft_putnbr_base(nb, base_to, base_to_size));
 }
