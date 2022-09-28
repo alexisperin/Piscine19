@@ -18,14 +18,14 @@ int main (void)
 	char *tab[5];
 	int i;
 
-	tab[0] = " AZFAE54321";
+	tab[0] = "54321";
 	tab[1] = "654";
-	tab[2] = " aefea";
+	tab[2] = "1";
 	tab[3] = "13";
 	tab[4] = NULL;
 	i = 0;
 	ft_advanced_sort_string_tab(tab, &ft_strcmp);
-	while (i < 5)
+	while (i < 4)
 	{
 		printf("%s\n", tab[i]);
 		i++;

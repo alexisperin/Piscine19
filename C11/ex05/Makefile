@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aperin <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: aperin <aperin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/22 14:02:06 by aperin            #+#    #+#              #
-#    Updated: 2022/09/22 14:15:32 by aperin           ###   ########.fr        #
+#    Updated: 2022/09/28 10:33:08 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRCS	= ft_atoi.c ft_putnbr.c ft_str.c main.c operations.c
 OBJS	= $(SRCS:.c=.o)
 
 %.o : %.c
-	gcc -Wall -Wextra -Werror -c -I./includes $< -o ${<:.c=.o}
+	gcc -Wall -Wextra -Werror -c $< -o ${<:.c=.o}
 
 $(NAME):	$(OBJS)
 	gcc -Wall -Wextra -Werror $(OBJS) -o $(NAME)
