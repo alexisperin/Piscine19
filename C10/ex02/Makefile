@@ -5,13 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aperin <aperin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/22 15:00:16 by aperin            #+#    #+#              #
-#    Updated: 2022/09/28 10:59:00 by aperin           ###   ########.fr        #
+#    Created: 2022/09/28 11:00:50 by aperin            #+#    #+#              #
+#    Updated: 2022/09/28 14:07:24 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= display_file
-SRCS	= main.c display_file.c ft_str.c
+NAME	= ft_tail
+SRCS	= main.c ft_tail.c display.c ft_utils.c
 OBJS	= $(SRCS:.c=.o)
 
 %.o : %.c
