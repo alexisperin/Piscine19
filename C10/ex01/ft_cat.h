@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cat.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:49:04 by aperin            #+#    #+#             */
-/*   Updated: 2022/09/22 16:49:07 by aperin           ###   ########.fr       */
+/*   Updated: 2022/09/28 11:09:03 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # define STDERR 2
 
 void	ft_putstr(char *str, int output, int len);
-int		is_single_dash(char *str);
-void    ft_cat(char *prog_name, char *filename);
+void	ft_cat(char *prog_name, char *filename);
 void	ft_stdin(void);
+int		is_single_dash(char *str);
 
 #endif

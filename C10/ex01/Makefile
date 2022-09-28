@@ -1,16 +1,33 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: aperin <aperin@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/09/28 11:00:50 by aperin            #+#    #+#              #
+#    Updated: 2022/09/28 11:02:15 by aperin           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME	= ft_cat
 SRCS	= main.c ft_cat.c ft_str.c
+OBJS	= $(SRCS:.c=.o)
 
-$(NAME):
-	gcc -Wall -Wextra -Werror $(SRCS) -o $(NAME)
+%.o : %.c
+	gcc -Wall -Wextra -Werror -c $< -o ${<:.c=.o}
+
+$(NAME):	$(OBJS)
+	gcc -Wall -Wextra -Werror $(OBJS) -o $(NAME)
 
 all:	$(NAME)
 
-clean:
-	rm -f $(NAME).exe
+clean:	
+	rm -f $(OBJS)
 
 fclean:	clean
+	rm -f $(NAME)
 
-re:	clean all
+re:	fclean all
 
-.PHONY:	all re clean fclean
+.PHONY:	all clean fclean re
